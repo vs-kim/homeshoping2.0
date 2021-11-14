@@ -1,24 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 function Header({ onClickCart }) {
-  function $(el){
-    return document.querySelector(el);
-  }
-  let container = $('.container');
-  let toggle = $('#toggle-theme');
-  toggle.addEventListener('click', () =>{
-    let list = container.classList;
-    if(list.contains('default')){
-      list.replace('default', 'dark');
-      toggle.textContent = 'Light';
-    } else{
-      list.replace('dark', 'default');
-      toggle.textContent = 'Dark';
-    }
-  })
-
+  // function $(el){
+  //   return document.querySelector(el);
+  // }
+  // let container = $('.container');
+  // let toggle = $('#toggle-theme');
+  // toggle.addEventListener('click', () =>{
+  //   let list = container.classList;
+  //   if(list.contains('default')){
+  //     list.replace('default', 'dark');
+  //     toggle.textContent = 'Light';
+  //   } else{
+  //     list.replace('dark', 'default');
+  //     toggle.textContent = 'Dark';
+  //   }
+  // })
 
   return (
     <header>
@@ -65,7 +63,7 @@ function Header({ onClickCart }) {
                     Sign Up
                   </button>
                 </Link>
-                <button id="toggle-theme">Dark</button>
+                <button id='toggle-theme'>Dark</button>
               </div>
             </div>
           </div>

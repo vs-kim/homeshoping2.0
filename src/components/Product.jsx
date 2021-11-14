@@ -2,7 +2,10 @@
 // import Footer from './Footer';
 import '../css/Product.css';
 
-const Product = ({ onAddCart, item }) => {
+const Product = ({ addToCart, item }) => {
+  const onClickAddToCart = () => {
+    addToCart(item);
+  };
   return (
     <div>
       <div className='container mt-5 mb-5'>
@@ -36,7 +39,7 @@ const Product = ({ onAddCart, item }) => {
 
                 <div className='buttons d-flex justify-content-start mt-5 '>
                   <button className='btn btn-outline-dark '>Buy Now</button>
-                  <button onClick={onAddCart} className='justify-content-start btn btn-dark'>
+                  <button onClick={onClickAddToCart} className='justify-content-start btn btn-dark'>
                     Add to Cart
                   </button>
                 </div>
@@ -45,8 +48,67 @@ const Product = ({ onAddCart, item }) => {
           </div>
         </div>
       </div>
+
+      {/* <div className='container-fluid'>
+        <div>
+          <div className='d-flex '>
+            <div className='product-left'>
+              <div className='d-flex flex-wrap   '>
+                <div className='item-images'>
+                  <img
+                    src='https://shop.navi.gg/files/resized/products/navi41010.650x622.png'
+                    alt=''
+                  />
+                </div>
+                <div className='item-images'>
+                  <img
+                    src='https://shop.navi.gg/files/resized/products/navi41021.650x622.png'
+                    alt=''
+                  />
+                </div>
+                <div className='item-images'>
+                  <img
+                    src='https://shop.navi.gg/files/resized/products/navi41015.650x622.png'
+                    alt=''
+                  />
+                </div>
+                <div className='item-images'>
+                  <img
+                    src='https://shop.navi.gg/files/resized/products/navi41046.650x622.png'
+                    alt=''
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='product-right'>
+              <div className='item-description'>
+                <p>
+                  Коллекция одежды Basic We, где мы вписали киберспорт в повседневность и добавили
+                  побольше комфорта. Худи кроя оверсайз в любимом цвете и с минималистичным
+                  логотипом NAVI.
+                </p>
+
+                <h4>Размер</h4>
+                <div className='size-buttons d-block '>
+                  <button>xs</button>
+                  <button>sm</button>
+                  <button>l</button>
+                </div>
+                <span>$60</span>
+
+                <button>Добавить в корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
 
 export default Product;
+{
+  /* <img src='https://shop.navi.gg/files/resized/products/navi41021.650x622.png' alt='' />
+              <img src='https://shop.navi.gg/files/resized/products/navi41015.650x622.png' alt='' />
+              <img src='https://shop.navi.gg/files/resized/products/navi41046.650x622.png' alt='' /> */
+}

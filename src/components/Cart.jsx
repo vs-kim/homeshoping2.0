@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Cart({ onCloseCart, items = [] }) {
+function Cart({ onRemove, onCloseCart, items = [] }) {
+  console.log(onRemove);
   return (
     <div className='overlay'>
       <div className='cart  '>
@@ -29,7 +30,14 @@ function Cart({ onCloseCart, items = [] }) {
             <div className='price d-flex ms-auto align-items-center'>
               <span>{obj.price}</span>
               <span>$</span>
-              <img className='trashSvg' width={25} height={30} src='/images/trash.svg' alt='' />
+              <img
+                onClick={() => onRemove(obj.id)}
+                className='trashSvg'
+                width={25}
+                height={30}
+                src='/images/trash.svg'
+                alt=''
+              />
             </div>
           </div>
         ))}
