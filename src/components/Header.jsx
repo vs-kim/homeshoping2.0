@@ -1,9 +1,28 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 function Header({ onClickCart }) {
+  function $(el){
+    return document.querySelector(el);
+  }
+  let container = $('.container');
+  let toggle = $('#toggle-theme');
+  toggle.addEventListener('click', () =>{
+    let list = container.classList;
+    if(list.contains('default')){
+      list.replace('default', 'dark');
+      toggle.textContent = 'Light';
+    } else{
+      list.replace('dark', 'default');
+      toggle.textContent = 'Dark';
+    }
+  })
+
+
   return (
     <header>
-      <div className='contaner'>
+      <div className='container default'>
         <div className='header--top p-3 bg-dark text-white '>
           <div className='container'>
             <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
@@ -14,7 +33,6 @@ function Header({ onClickCart }) {
                   <img src='/images/merch2.png' alt='logo' width='220' height='90' />
                 </a>
               </div>
-
               <form className='form--header ms-auto col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3'>
                 <input
                   type='search'
@@ -27,7 +45,6 @@ function Header({ onClickCart }) {
               <div className='text-end'>
                 <button onClick={onClickCart} type='button' className='btn btn-outline-light me-2'>
                   <svg
-                    className=''
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
                     height='16'
@@ -38,9 +55,17 @@ function Header({ onClickCart }) {
                   </svg>
                   Cart
                 </button>
-                <button type='button' className='btn btn-warning me-2'>
-                  Login
-                </button>
+                <Link to='/login'>
+                  <button type='button' className='btn btn-warning me-2'>
+                    Login
+                  </button>
+                </Link>
+                <Link to='/sign'>
+                  <button type='button' className='btn btn-warning me-2'>
+                    Sign Up
+                  </button>
+                </Link>
+                <button id="toggle-theme">Dark</button>
               </div>
             </div>
           </div>

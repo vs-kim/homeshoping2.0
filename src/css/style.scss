@@ -4,6 +4,26 @@
   margin: 0;
   font-family: 'Electrolize';
 }
+.default{
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --neutral: rgba(229, 229, 229, 0.3);
+}
+.dark {
+  --text-color: #ffffff;
+  --background-color: #141945;
+  --neutral: rgba(229, 229, 229, 0.3);
+}
+#toggle-theme{
+  padding:2px 4px;
+  line-height: 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--text-color);
+  color: var(--background);
+  outline: none;
+  cursor: pointer;
+}
 .b-example-divider {
   height: 3rem;
   background-color: rgba(0, 0, 0, 0.1);

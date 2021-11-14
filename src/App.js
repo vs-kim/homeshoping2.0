@@ -11,6 +11,8 @@ import ProductDescription from './pages/Product/ProductDescription';
 // import Products from './pages/Products';
 import Body from './components/Body';
 import Home from './pages/Home';
+import Login from "./components/Login";
+import Sign from "./components/Sign";
 import React from 'react';
 import './css/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,6 +32,8 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/product' component={Products} />
           <Route exact path='/product/:id' component={ProductDescription} />
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/sign' component={Sign}/>
         </Switch>
       </Router>
     </>
