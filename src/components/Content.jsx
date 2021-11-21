@@ -4,23 +4,21 @@ function Content({ itemInfo }) {
   console.log({ itemInfo });
   return (
     <div>
-      <div className='container'>
-        <div id='product-content' className='product-list'>
-          <div className='product-item'>
-            <div className='product-item-inner'>
-              <a href={'/product/' + itemInfo.id}>
-                <picture className='product-item-image'>
-                  <img width={320} height={320} src={itemInfo.imgUrl} alt='' />
-                </picture>
-              </a>
-              <div className='product-item-title'>
-                <div className='product-item-name'>
-                  <a href=''>{itemInfo.title}</a>
-                </div>
-                <div className='price'>
-                  <span class='fn_price'>{itemInfo.price}</span>
-                  <span class='currency'>$</span>
-                </div>
+      <div id='product-content' className='product-list'>
+        <div className='product-item'>
+          <div className='product-item-inner'>
+            <a href={'/product/' + itemInfo.id}>
+              <picture className='product-item-image'>
+                <img width={320} height={320} src={itemInfo.imgUrl} alt='' />
+              </picture>
+            </a>
+            <div className='product-item-title'>
+              <div className='product-item-name'>
+                <a href=''>{itemInfo.title}</a>
+              </div>
+              <div className='price'>
+                <span class='fn_price'>{itemInfo.price}</span>
+                <span class='currency'>$</span>
               </div>
             </div>
           </div>
