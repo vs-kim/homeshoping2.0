@@ -20,7 +20,7 @@ function Header({ onClickCart }) {
 
   return (
     <header>
-      <div className='container default'>
+      <div className=''>
         <div className='header--top p-3 bg-dark text-white '>
           <div className='container'>
             <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
