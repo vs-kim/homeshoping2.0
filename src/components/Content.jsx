@@ -1,24 +1,36 @@
 import React from 'react';
 
-function Content({ itemInfo }) {
-  console.log({ itemInfo });
+function Content({ title, price, imgUrl, id }) {
+  const [isFavorite, setIsFavorite] = React.useState();
+  const onClickFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
   return (
     <div>
       <div id='product-content' className='product-list'>
         <div className='product-item'>
           <div className='product-item-inner'>
-            <a href={'/product/' + itemInfo.id}>
+            <a href={'/product/' + id}>
               <picture className='product-item-image'>
-                <img width={320} height={320} src={itemInfo.imgUrl} alt='' />
+                <img width={320} height={320} src={imgUrl} alt='' />
               </picture>
             </a>
-            <div className='product-item-title'>
-              <div className='product-item-name'>
-                <a href=''>{itemInfo.title}</a>
+            <div className='product-item-title d-flex flex-wrap flex-column '>
+              <div className='product-item-name '>
+                <a href=''>{title}</a>
               </div>
-              <div className='price'>
-                <span class='fn_price'>{itemInfo.price}</span>
-                <span class='currency'>$</span>
+              <div className='product-info d-flex align-items-center'>
+                <div className='price '>
+                  <span class='fn_price'>{price}</span>
+                  <span class='currency'>$</span>
+                </div>
+                <div className='favorite ms-auto '>
+                  <img
+                    onClick={onClickFavorite}
+                    src={isFavorite ? '/images/favoriteOn.svg' : '/images/favoriteOff.svg'}
+                    alt='favorite'
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -120,12 +120,17 @@ nav {
 
   .price {
     white-space: nowrap;
-    font-size: 18px;
+    font-size: 23px;
     line-height: 22px;
     font-family: 'Proxima Nova', Arial;
     font-weight: bold;
     color: #333;
   }
+  .favorite {
+    cursor: pointer;
+  }
+}
+.product-info {
 }
 .overlay {
   position: absolute;

@@ -2,7 +2,7 @@
 // import Footer from './Footer';
 import '../css/Product.css';
 
-const Product = ({ addToCart, item }) => {
+const Product = ({ addToCart, item = [] }) => {
   const onClickAddToCart = () => {
     addToCart(item);
   };

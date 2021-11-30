@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import Content from '../../components/Content';
 import Cart from '../../components/Cart';
 import Search from '../../components/Search';
+import axios from 'axios';
 
 const Products = () => {
   const [items, setItems] = useState([]);
@@ -11,14 +12,17 @@ const Products = () => {
   const [cartItems, setCartItems] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState();
   useEffect(() => {
-    fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        json = json.map((e, id) => ({ ...e, id: id }));
-        setItems(json);
-      });
+    // fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((json) => {
+    //     json = json.map((e, id) => ({ ...e, id: id }));
+    //     setItems(json);
+    //   });
+    axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/Items').then((res) => {
+      setItems(res.data);
+    });
   }, []);
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);

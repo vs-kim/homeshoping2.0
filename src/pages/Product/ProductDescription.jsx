@@ -13,14 +13,17 @@ const ProductDescription = () => {
   console.log(id);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        json = json.map((e, id) => ({ ...e, id: id }));
-        setItems(json);
-      });
+    // fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((json) => {
+    //     json = json.map((e, id) => ({ ...e, id: id }));
+    //     setItems(json);
+    //   });
+    axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/Items').then((res) => {
+      setItems(res.data);
+    });
     axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/cart').then((res) => {
       setCartItems(res.data);
     });
@@ -39,7 +42,7 @@ const ProductDescription = () => {
       {cartOpened && (
         <Cart items={cartItems} onRemove={onRemoveItem} onCloseCart={() => setCardOpened(false)} />
       )}
-      {items.length > 0 && <Product addToCart={onAddToCart} item={items[id]} />}
+      <Product addToCart={onAddToCart} item={items[id]} />
       <Footer />
     </div>
   );
