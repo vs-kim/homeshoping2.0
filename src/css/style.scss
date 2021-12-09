@@ -2,8 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Electrolize';
+  // font-family: 'Electrolize';
 }
+
+.main-carousel {
+  margin-bottom: 50px;
+}
+
 .default {
   --text-color: #000000;
   --background-color: #ffffff;
@@ -67,6 +72,7 @@ nav {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
 .search-box {
   margin-top: 40px;
 }
@@ -139,7 +145,7 @@ nav {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 4;
   display: flex;
 }
 .cart {
@@ -216,10 +222,10 @@ h2 {
   justify-content: center;
 }
 .content-title {
-  margin-top: 5rem;
+  margin-top: 9rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 //----карточка на основной странице
@@ -384,4 +390,108 @@ h2 {
       padding: 20px;
     }
   }
+}
+.links {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.shoes {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 400px;
+}
+.shoes .thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.shoes .thumb li {
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  background: #00f;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+.shoes .thumb li img {
+  width: 80%;
+  transition: 0.5s;
+}
+.shoes .thumb li:hover img {
+  transform: rotate(-35deg);
+}
+.shoes .imgBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(4px) !important;
+  padding: 60px 20px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.shoes .imgBox h2 {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.shoes .imgBox img {
+  width: 80%;
+  transition: 0.25s;
+}
+.shoes .imgBox img:hover {
+  transform: scale(1.25) rotate(-15deg);
+}
+.shoes .imgBox .size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shoes .imgBox .size span {
+  color: #fff;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-right: 5px;
+}
+.shoes .imgBox .size li {
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  color: #1e6b7b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sneakers {
+  background: url('../img/bg.jpg');
+  background-color: gray;
+  border-radius: 60px;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 40px 40px 40px 0px;
+  width: 100%;
+  height: 100%;
 }

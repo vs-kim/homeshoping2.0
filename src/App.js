@@ -1,49 +1,53 @@
-// import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
-// import MySwiper from './MySwiper';
-import Content from './components/Content';
-import Footer from './components/Footer';
+
 import Cart from './components/Cart';
-// import Product from './components/Product';
-import Products from './pages/Product/Products';
+
+import Products from './pages/Product/ItemsCard';
 import ProductDescription from './pages/Product/ProductDescription';
-// import Products from './pages/Products';
+
 import Body from './components/Body';
 import Home from './pages/Home';
-import Login from "./components/Login";
-import Sign from "./components/Sign";
+import Login from './components/Login';
+import Sign from './components/Sign';
+import ItemsCard from './pages/Product/ItemsCard';
+import Favorites from './pages/Favorites';
+import axios from 'axios';
 import React from 'react';
+
 import './css/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [cartOpened, setCardOpened] = React.useState(false);
   const [cartItems, setCartItems] = React.useState([]);
-  console.log(cartOpened);
-  const onAddToCart = () => {
-    alert(123);
-  };
+  // const [favorites, setFavorites] = React.useState();
+  // React.useEffect(() => {
+  //   axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/favorites').then((res) => {
+  //     setFavorites(res.data);
+  //   });
+  // }, []);
+  // const onAddToFavorites = (obj) => {
+  //   axios.post('https://6163b62db55edc00175c1ad5.mockapi.io/favorites', obj);
+  //   setFavorites((prev) => [...prev, obj]);
+  // };
+
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/product' component={Products} />
-          <Route exact path='/product/:id' component={ProductDescription} />
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/sign' component={Sign}/>
-        </Switch>
-      </Router>
-    </>
+    <div>
+      {cartOpened && <Cart items={cartItems} onCloseCart={() => setCardOpened(false)} />}
+
+      <Routes>
+        <Route exact path='/' element={<Home />}></Route>
+        <Route exact path='/content' element={<ItemsCard />}></Route>
+        <Route exact path='/product/:id' element={<ProductDescription />}></Route>
+        <Route exact path='/login' element={<Login />}></Route>
+        <Route exact path='/sign' element={<Sign />}></Route>
+        <Route exact path='/favorites' element={<Favorites />}></Route>
+      </Routes>
+    </div>
   );
 }
-// const Home = () => (
-//   <div>
-//     <Header />
-//     <Body />
-//     <Footer />
-//   </div>
-// );
+
 export default App;

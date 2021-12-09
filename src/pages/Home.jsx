@@ -8,8 +8,9 @@ function Home() {
   const [cartItems, setCartItems] = React.useState([]);
   return (
     <div>
-      {cartOpened && <Cart items={cartItems} onCloseCart={() => setCardOpened(false)} />}
       <Header onClickCart={() => setCardOpened(true)} />
+      {cartOpened && <Cart items={cartItems} onCloseCart={() => setCardOpened(false)} />}
+
       <Body />
       <Footer />
     </div>

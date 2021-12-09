@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Cart({ onRemove, onCloseCart, items = [] }) {
-  console.log(onRemove);
   return (
     <div className='overlay'>
       <div className='cart  '>
@@ -25,7 +24,6 @@ function Cart({ onRemove, onCloseCart, items = [] }) {
             <div className='cart-item-info '>
               <p class='item-name'>{obj.title}</p>
               <p className='item-size d-block'>XS</p>
-              <button>+-</button>
             </div>
             <div className='price d-flex ms-auto align-items-center'>
               <span>{obj.price}</span>

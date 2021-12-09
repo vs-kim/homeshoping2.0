@@ -1,6 +1,7 @@
 // import Header from './Header';
 // import Footer from './Footer';
 import '../css/Product.css';
+import '../css/style.scss';
 
 const Product = ({ addToCart, item = [] }) => {
   const onClickAddToCart = () => {
@@ -26,22 +27,53 @@ const Product = ({ addToCart, item = [] }) => {
                     <i className='bx bx-heart'></i>
                   </span>
                 </div>
-                <div className='mt-2 pr-3 content'>
+                <div className='mt-2  content'>
                   <p>
-                    Lorem ipsum dolor syit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua
+                    The Basic We clothing collection, where we have introduced esports into everyday
+                    life and added more comfort. Oversized hoody in your favorite color and
+                    minimalist NAVI logo.
                   </p>
                 </div>
-                <div className='price d-flex align-items-center'>
+
+                <div className='price d-flex align-items-center align-content-end '>
                   <h3>{item.price}</h3>
                   <b>$</b>
                 </div>
+                <div className='product-variants d-flex flex-wrap'>
+                  <label className='product-variant'>
+                    {/* <input
+                      type='radio'
+                      className='fn-variant'
+                      data-variant_name='XS'
+                      data-variant_size
+                      checked
+                      name='variant'
+                    /> */}
 
-                <div className='buttons d-flex justify-content-start mt-5 '>
+                    <span>XS</span>
+                  </label>
+
+                  <label className='product-variant'>
+                    <span>S/M</span>
+                  </label>
+
+                  <label className='product-variant'>
+                    <span>L/XL</span>
+                  </label>
+                </div>
+                {/* <div className='buttons d-flex justify-content-start mt-5 '>
                   <button className='btn btn-outline-dark '>Buy Now</button>
                   <button onClick={onClickAddToCart} className='justify-content-start btn btn-dark'>
                     Add to Cart
                   </button>
+                </div> */}
+              </div>
+              <div className='button-cart d-flex justify-content-start align-items-stretch '>
+                <div className='a' href=''>
+                  <span className=''>Buy Now</span>
+                </div>
+                <div className='a' onClick={onClickAddToCart} href=''>
+                  <span>Add to Cart</span>
                 </div>
               </div>
             </div>
