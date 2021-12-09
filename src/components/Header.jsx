@@ -95,7 +95,7 @@ function Header({ onClickCart }) {
 
                   <li className='nav-item'>
                     <div className='nav-link'>
-                      <Link className='links text-decoration-none' to='content/'>
+                      <Link className='links text-decoration-none' to='/content'>
                         All products
                       </Link>
                     </div>
@@ -103,7 +103,7 @@ function Header({ onClickCart }) {
 
                   <li className='nav-item'>
                     <div className='nav-link'>
-                      <Link className='links text-decoration-none' to='favorites'>
+                      <Link className='links text-decoration-none' to='/favorites'>
                         Favorites
                       </Link>
                     </div>

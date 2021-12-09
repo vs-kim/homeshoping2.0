@@ -25,8 +25,28 @@ const ItemsCard = () => {
     setSearchValue(event.target.value);
   };
   const onAddToFavorites = (obj) => {
-    axios.post('https://6163b62db55edc00175c1ad5.mockapi.io/favorites', obj);
-    setFavorites((prev) => [...prev, obj]);
+    // axios.post('https://6163b62db55edc00175c1ad5.mockapi.io/favorites', obj);
+    // setFavorites((prev) => [...prev, obj]);
+    const id = obj.id;
+    let favorites = [];
+    favorites = window.sessionStorage.getItem('favorites');
+    if (favorites) favorites = JSON.parse(favorites);
+
+    if (favorites?.length > 0) {
+      // list exist
+      if (!favorites.includes(id)) {
+        // not in the list
+        favorites.push(id);
+      } else {
+        // already in the list
+        favorites = favorites.filter((e) => e != id);
+      }
+    } else {
+      // list is empty
+      favorites = [id];
+    }
+
+    window.sessionStorage.setItem('favorites', JSON.stringify(favorites));
   };
   return (
     <>
