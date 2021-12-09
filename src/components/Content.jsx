@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Content({ title, price, imgUrl, id }) {
+function Content({ title, price, imgUrl, id, onFavorite }) {
   const [isFavorite, setIsFavorite] = React.useState();
   const onClickFavorite = () => {
+    onFavorite({ id, title, price, imgUrl });
     setIsFavorite(!isFavorite);
   };
   return (
@@ -10,11 +12,17 @@ function Content({ title, price, imgUrl, id }) {
       <div id='product-content' className='product-list'>
         <div className='product-item'>
           <div className='product-item-inner'>
-            <a href={'/product/' + id}>
+            {/* <a href={'/product/' + id}>
               <picture className='product-item-image'>
                 <img width={320} height={320} src={imgUrl} alt='' />
               </picture>
-            </a>
+              
+            </a> */}
+            <Link to={`/product/${id}`}>
+              <picture className='product-item-image'>
+                <img width={320} height={320} src={imgUrl} alt='' />
+              </picture>
+            </Link>
             <div className='product-item-title d-flex flex-wrap flex-column '>
               <div className='product-item-name '>
                 <a href=''>{title}</a>

@@ -41,10 +41,11 @@ function Login() {
   };
   return (
     <div>
+      <Header onClickCart={() => setCardOpened(true)} />
       {cartOpened && (
         <Cart items={cartItems} onRemove={onRemoveItem} onCloseCart={() => setCardOpened(false)} />
       )}
-      <Header onClickCart={() => setCardOpened(true)} />
+
       <div className='auth-wrapper'>
         <div className='auth-inner'>
           <form>

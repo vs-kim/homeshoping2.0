@@ -42,7 +42,7 @@ const ProductDescription = () => {
       {cartOpened && (
         <Cart items={cartItems} onRemove={onRemoveItem} onCloseCart={() => setCardOpened(false)} />
       )}
-      <Product addToCart={onAddToCart} item={items[id]} />
+      {items.length > 0 && <Product addToCart={onAddToCart} item={items[id]} />}
       <Footer />
     </div>
   );

@@ -24,13 +24,13 @@ function Header({ onClickCart }) {
         <div className='header--top p-3 bg-dark text-white '>
           <div className='container'>
             <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
-              <div className='logo'>
-                <a
-                  href='/'
-                  className='navbar-brand mx-2 d-flex align-items-center mb-2 mb-lg-0  text-white text-decoration-none'>
-                  <img src='/images/merch2.png' alt='logo' width='220' height='90' />
-                </a>
-              </div>
+              <Link to='/'>
+                <div className='logo'>
+                  <div className='navbar-brand mx-2 d-flex align-items-center mb-2 mb-lg-0  text-white text-decoration-none'>
+                    <img src='/images/merch2.png' alt='logo' width='220' height='90' />
+                  </div>
+                </div>
+              </Link>
               <form className='form--header ms-auto col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3'>
                 <input
                   type='search'
@@ -86,21 +86,27 @@ function Header({ onClickCart }) {
               <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                 <ul className='navbar-nav me-auto mb-lg-0   '>
                   <li className='nav-item'>
-                    <a className='nav-link active' aria-current='page' href='/'>
-                      Home
-                    </a>
+                    <div className='nav-link  '>
+                      <Link className='links text-decoration-none' to='/'>
+                        Home
+                      </Link>
+                    </div>
                   </li>
 
                   <li className='nav-item'>
-                    <a className='nav-link' href='/product'>
-                      All products
-                    </a>
+                    <div className='nav-link'>
+                      <Link className='links text-decoration-none' to='content/'>
+                        All products
+                      </Link>
+                    </div>
                   </li>
 
                   <li className='nav-item'>
-                    <a className='nav-link' href='#'>
-                      Contact us
-                    </a>
+                    <div className='nav-link'>
+                      <Link className='links text-decoration-none' to='favorites'>
+                        Favorites
+                      </Link>
+                    </div>
                   </li>
                 </ul>
               </div>

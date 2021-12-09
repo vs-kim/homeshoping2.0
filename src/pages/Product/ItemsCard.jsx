@@ -5,27 +5,28 @@ import Content from '../../components/Content';
 import Cart from '../../components/Cart';
 import Search from '../../components/Search';
 import axios from 'axios';
+import Favorites from '../Favorites';
 
-const Products = () => {
+const ItemsCard = () => {
   const [items, setItems] = useState([]);
   const [cartOpened, setCardOpened] = React.useState(false);
   const [cartItems, setCartItems] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState();
+  const [favorites, setFavorites] = React.useState();
   useEffect(() => {
-    // fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((json) => {
-    //     json = json.map((e, id) => ({ ...e, id: id }));
-    //     setItems(json);
-    //   });
     axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/Items').then((res) => {
       setItems(res.data);
+    });
+    axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/favorites').then((res) => {
+      setFavorites(res.data);
     });
   }, []);
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
+  };
+  const onAddToFavorites = (obj) => {
+    axios.post('https://6163b62db55edc00175c1ad5.mockapi.io/favorites', obj);
+    setFavorites((prev) => [...prev, obj]);
   };
   return (
     <>
@@ -43,6 +44,7 @@ const Products = () => {
                 price={item.price}
                 imgUrl={item.imgUrl}
                 id={item.id}
+                onFavorite={(obj) => onAddToFavorites(obj)}
               />
             ))}
         </div>
@@ -53,4 +55,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ItemsCard;

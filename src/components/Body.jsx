@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Body() {
   return (
     <div>
-      <div className='container'>
+      <div className='container-fluid main-carousel'>
         <div id='carouselExampleControls' class='carousel slide' data-bs-ride='carousel'>
           <div class='carousel-inner'>
             <div class='carousel-item active'>
@@ -31,37 +31,75 @@ function Body() {
           </button>
         </div>
       </div>
+      <div className='container '>
+        <h2 className='content-title'> NEW NIKE SNEAKERS COLLECTION 2021-2022</h2>
+        <div className='sneakers d-flex flex-wrap justify-content-between'>
+          <div className='shoes'>
+            <ul className='thumb'>
+              <li>
+                <img src='/images/shoes1.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes2.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes3.png' alt='' />
+              </li>
+            </ul>
 
-      <div className='container'>
-        <h2 className='content-title'> BEST SELLERS IN THE 2021</h2>
-        <div className='d-flex flex-wrap justify-content-between '>
-          <div className='main-page-cards '>
-            <div className='card-image '>
-              <img src='./images/mayka.png' alt='' />
-            </div>
-            <div className='card-title'>
-              <p>NAVI OVERSIZE Hoodie LITKOVSKAYA</p>
-              <span>69,00$</span>
+            <div className='imgBox'>
+              <h2>Nike Air Zoom</h2>
+              <img src='/images/shoes1.png' alt='' />
+              <ul className='size'></ul>
+              <a href='' className='add'>
+                add to cart
+              </a>
             </div>
           </div>
 
-          <div className='main-page-cards '>
-            <div className='card-image '>
-              <img src='./images/mayka.png' alt='' />
-            </div>
-            <div className='card-title'>
-              <p>NAVI OVERSIZE Hoodie LITKOVSKAYA</p>
-              <span>69,00$</span>
+          <div className='shoes'>
+            <ul className='thumb'>
+              <li>
+                <img src='/images/shoes1.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes2.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes3.png' alt='' />
+              </li>
+            </ul>
+
+            <div className='imgBox'>
+              <h2>Nike Air Zoom</h2>
+              <img src='/images/shoes2.png' alt='' />
+              <ul className='size'></ul>
+              <a href='' className='add'>
+                add to cart
+              </a>
             </div>
           </div>
 
-          <div className='main-page-cards '>
-            <div className='card-image '>
-              <img src='./images/mayka.png' alt='' />
-            </div>
-            <div className='card-title'>
-              <p>NAVI OVERSIZE Hoodie LITKOVSKAYA</p>
-              <span>69,00$</span>
+          <div className='shoes'>
+            <ul className='thumb'>
+              <li>
+                <img src='/images/shoes1.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes2.png' alt='' />
+              </li>
+              <li>
+                <img src='/images/shoes3.png' alt='' />
+              </li>
+            </ul>
+
+            <div className='imgBox'>
+              <h2>Nike Air Zoom</h2>
+              <img src='/images/shoes3.png' alt='' />
+              <ul className='size'></ul>
+              <a href='' className='add'>
+                add to cart
+              </a>
             </div>
           </div>
         </div>
@@ -90,50 +128,36 @@ function Body() {
       </div>
 
       <div className='container'>
+        <h2 className='content-title'> BEST SELLERS IN THE 2021</h2>
         <div className='d-flex flex-wrap justify-content-between '>
-          <div className='features-cards'>
-            <div className='icon'>
-              <img height={100} width={100} src='../../images/delivery-truck.png' alt='' />
+          <div className='main-page-cards '>
+            <div className='card-image '>
+              <img src='./images/naviH2.png' alt='' />
             </div>
-            <div className='features-text'>
-              <h3>1 Day Delivery</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consequatur
-                quae obcaecati quibusdam quisquam esse expedita deleniti libero magni animi
-                explicabo pariatur, at nam dolores recusandae velit ratione corrupti facere!
-              </p>
+            <div className='card-title'>
+              <p>NAVI OVERSIZE Hoodie YELLOW</p>
+              <span>69,00$</span>
             </div>
-            <a className='more' href='#'></a>
           </div>
 
-          <div className='features-cards'>
-            <div className='icon'>
-              <img height={100} width={100} src='../../images/badge.png' alt='' />
+          <div className='main-page-cards '>
+            <div className='card-image '>
+              <img src='./images/naviH.png' alt='' />
             </div>
-            <div className='features-text'>
-              <h3>Best quality</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consequatur
-                quae obcaecati quibusdam quisquam esse expedita deleniti libero magni animi
-                explicabo pariatur, at nam dolores recusandae velit ratione corrupti facere!
-              </p>
+            <div className='card-title'>
+              <p>NAVI OVERSIZE Hoodie LITKOVSKAYA</p>
+              <span>69,00$</span>
             </div>
-            <a className='more' href='#'></a>
           </div>
 
-          <div className='features-cards'>
-            <div className='icon'>
-              <img height={100} width={100} src='../../images/best-price.png' alt='' />
+          <div className='main-page-cards '>
+            <div className='card-image '>
+              <img src='./images/naviH3.png' alt='' />
             </div>
-            <div className='features-text'>
-              <h3>Low price</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consequatur
-                quae obcaecati quibusdam quisquam esse expedita deleniti libero magni animi
-                explicabo pariatur, at nam dolores recusandae velit ratione corrupti facere!
-              </p>
+            <div className='card-title'>
+              <p>NAVI OVERSIZE Hoodie </p>
+              <span>69,00$</span>
             </div>
-            <a className='more' href='#'></a>
           </div>
         </div>
       </div>
