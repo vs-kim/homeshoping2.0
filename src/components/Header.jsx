@@ -92,6 +92,7 @@ function Header({ onClickCart }) {
                   </li>
 
                   <li className='nav-item'>
+<<<<<<< Updated upstream
                     <a className='nav-link' href='/product'>
                       All products
                     </a>
@@ -101,6 +102,21 @@ function Header({ onClickCart }) {
                     <a className='nav-link' href='#'>
                       Contact us
                     </a>
+=======
+                    <div className='nav-link'>
+                      <Link className='links text-decoration-none' to='/content'>
+                        All products
+                      </Link>
+                    </div>
+                  </li>
+
+                  <li className='nav-item'>
+                    <div className='nav-link'>
+                      <Link className='links text-decoration-none' to='/favorites'>
+                        Favorites
+                      </Link>
+                    </div>
+>>>>>>> Stashed changes
                   </li>
                 </ul>
               </div>

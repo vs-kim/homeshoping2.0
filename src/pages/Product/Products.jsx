@@ -11,6 +11,10 @@ const Products = () => {
   const [cartOpened, setCardOpened] = React.useState(false);
   const [cartItems, setCartItems] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState();
+<<<<<<< Updated upstream:src/pages/Product/Products.jsx
+=======
+  // const [favorites, setFavorites] = React.useState();
+>>>>>>> Stashed changes:src/pages/Product/ItemsCard.jsx
   useEffect(() => {
     // fetch('https://6163b62db55edc00175c1ad5.mockapi.io/Items')
     //   .then((res) => {
@@ -23,10 +27,44 @@ const Products = () => {
     axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/Items').then((res) => {
       setItems(res.data);
     });
+<<<<<<< Updated upstream:src/pages/Product/Products.jsx
+=======
+    // axios.get('https://6163b62db55edc00175c1ad5.mockapi.io/favorites').then((res) => {
+    //   setFavorites(res.data);
+    // });
+>>>>>>> Stashed changes:src/pages/Product/ItemsCard.jsx
   }, []);
+
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
   };
+<<<<<<< Updated upstream:src/pages/Product/Products.jsx
+=======
+  const onAddToFavorites = (obj) => {
+    // axios.post('https://6163b62db55edc00175c1ad5.mockapi.io/favorites', obj);
+    // setFavorites((prev) => [...prev, obj]);
+    const id = obj.id;
+    let favorites = [];
+    favorites = window.sessionStorage.getItem('favorites');
+    if (favorites) favorites = JSON.parse(favorites);
+
+    if (favorites?.length > 0) {
+      // list exist
+      if (!favorites.includes(id)) {
+        // not in the list
+        favorites.push(id);
+      } else {
+        // already in the list
+        favorites = favorites.filter((e) => e != id);
+      }
+    } else {
+      // list is empty
+      favorites = [id];
+    }
+
+    window.sessionStorage.setItem('favorites', JSON.stringify(favorites));
+  };
+>>>>>>> Stashed changes:src/pages/Product/ItemsCard.jsx
   return (
     <>
       <Header onClickCart={() => setCardOpened(true)} />
