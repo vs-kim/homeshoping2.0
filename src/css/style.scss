@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   // font-family: 'Electrolize';
+  background-color: none;
 }
 
 .main-carousel {
@@ -74,6 +75,9 @@ nav {
 }
 
 .search-box {
+  margin-top: 40px;
+}
+.favorties-title {
   margin-top: 40px;
 }
 .product-list {
@@ -486,7 +490,7 @@ h2 {
 }
 .sneakers {
   background: url('../img/bg.jpg');
-  background-color: gray;
+
   border-radius: 60px;
 
   margin-top: 40px;

@@ -5,7 +5,6 @@ import Content from '../../components/Content';
 import Cart from '../../components/Cart';
 import Search from '../../components/Search';
 import axios from 'axios';
-import Favorites from '../Favorites';
 
 const ItemsCard = () => {
   const [items, setItems] = useState([]);
@@ -39,7 +38,7 @@ const ItemsCard = () => {
         favorites.push(id);
       } else {
         // already in the list
-        favorites = favorites.filter((e) => e != id);
+        favorites = favorites.filter((e) => e !== id);
       }
     } else {
       // list is empty

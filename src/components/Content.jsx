@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Content({ title, price, imgUrl, id, onFavorite }) {
-  const [isFavorite, setIsFavorite] = React.useState();
+function Content({ title, price, imgUrl, id, onFavorite, favorited = false }) {
+  const [isFavorite, setIsFavorite] = React.useState(favorited);
   const onClickFavorite = () => {
     onFavorite({ id, title, price, imgUrl });
     setIsFavorite(!isFavorite);

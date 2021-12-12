@@ -48,7 +48,9 @@ function Favorites() {
   return (
     <div>
       <Header onClickCart={() => setCardOpened(true)} />
+
       <div className='container'>
+        <h1 className='favorties-title'>My favorites</h1>
         <div className='d-flex flex-wrap justify-content-between'>
           {items.map((item, index) => (
             <Content
@@ -57,6 +59,7 @@ function Favorites() {
               price={item.price}
               imgUrl={item.imgUrl}
               id={item.id}
+              favorited={true}
               onFavorite={(obj) => onAddToFavorites(obj)}
             />
           ))}
