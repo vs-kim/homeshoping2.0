@@ -47,6 +47,9 @@ const ItemsCard = () => {
 
     window.sessionStorage.setItem('favorites', JSON.stringify(favorites));
   };
+  {
+    console.log(favorites);
+  }
   return (
     <>
       <Header onClickCart={() => setCardOpened(true)} />
@@ -63,6 +66,7 @@ const ItemsCard = () => {
                 price={item.price}
                 imgUrl={item.imgUrl}
                 id={item.id}
+                // favorited={favorites.some((obj) => obj.id === item.id)}
                 onFavorite={(obj) => onAddToFavorites(obj)}
               />
             ))}

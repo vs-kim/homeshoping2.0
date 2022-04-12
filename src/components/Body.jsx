@@ -31,6 +31,7 @@ function Body() {
           </button>
         </div>
       </div>
+      <h1>LOCAL</h1>
       <div className='container '>
         <h2 className='content-title'> NEW NIKE SNEAKERS COLLECTION 2021-2022</h2>
         <div className='sneakers d-flex flex-wrap justify-content-between'>
